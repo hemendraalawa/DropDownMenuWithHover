@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    font-size: 30px;
+}
+
+
+.box{
+    width: 225px;
+    height: 225px;
+    /* background-color: rgb(19, 113, 213); */
+    font-weight: 600;
+    border-radius: 5px;
+    position: relative;
+}
+
+.dropdown{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(212, 0, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 7px 9px black ;
+    
+}
+
+.left-icon,.right-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height:6px;
+    background-color: white;
+    border-radius:40px ;
+    top: 2px;
+    transition: all linear .2s;
+}
+
+.left-icon{
+    transform: rotate(45deg);
+    margin-left: 8px;
+}
+
+.right-icon{
+    transform: rotate(-45deg);
+    right: 8px;
+}
+
+.dropdown:hover .left-icon{
+    transform: rotate(135deg);
+}
+
+.dropdown:hover .right-icon{
+    transform: rotate(-135deg);
+}
+
+
+.items{
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    /* background: greenyellow; */
+    top: 0;
+    left: 0;
+    margin-top: 61px;
+    visibility: hidden;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.items a{
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: rgb(208, 205, 205);
+    padding: 8px 12px;
+    margin: 1px;
+    text-decoration: none;
+    color: rgb(212, 0, 255);
+    left: 100%;
+    transition: .4s;
+    z-index: 10;
+    font-size: 25px;
+    overflow: hidden;
+    transition-delay: calc(60ms * var(--i));
+}
+
+
+.dropdown:hover .items a{
+    left: 0%;
+    visibility: visible;
+}
+
+.anim{
+   position: absolute;
+   background-color:rgb(212, 0, 255); 
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   z-index: -900;
+   transform: rotate(155deg);
+   transform-origin: right;
+   transition: .4s;
+
+}
+
+.items a:hover .anim{
+    transform: rotate(0deg);
+}
+
+.items a:hover{
+    color: white;
+}
+
+
+
+
